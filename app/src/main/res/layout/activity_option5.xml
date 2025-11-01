@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#101820"
+    android:padding="16dp"
+    tools:context=".Option5Activity">
+
+    <!-- Título de Prácticas arriba -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🧪 PRÁCTICAS"
+        android:textAlignment="center"
+        android:textColor="#FEE715"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Sección superior con ImageView y Botón Ver -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:orientation="horizontal">
+
+        <!-- ImageView -->
+        <ImageView
+            android:id="@+id/selectImagesView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/ic_launcher_background"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="8dp"
+            android:padding="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <!-- Botón Ver -->
+        <Button
+            android:id="@+id/viewButton"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="#00C9A7"
+            android:text="🔍 Ver Imágenes"
+            android:textSize="16sp"
+            android:textAllCaps="false" />
+
+        <!-- Elegir ubicación (futuro uso) -->
+        <RadioGroup
+            android:id="@+id/radioGroupUbicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"/>
+
+    </LinearLayout>
+
+    <!-- RadioButtons para Categorías -->
+    <RadioGroup
+        android:id="@+id/categoryRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginVertical="10dp">
+
+        <RadioButton
+            android:id="@+id/radioEscuela"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="🏫 Aula"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/radioCasa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🏠 Hogar"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF" />
+
+    </RadioGroup>
+
+    <!-- ScrollView con RecyclerViews -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Recycler Escuela -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/escuelaRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone" />
+
+            <!-- Recycler Casa -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/casaRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>
